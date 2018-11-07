@@ -1,0 +1,550 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <title>Taipay Demo</title>
+  <meta name="viewport" content="width=device-width, user-scalable=no">
+  <link rel="stylesheet" href="jquery.mobile-1.4.5.min.css" />	
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.1/css/all.css" integrity="sha384-5sAR7xN1Nv6T6+dT2mhtzEpVJvfS3NScPQTrOxhwjIuvcA67KV2R5Jz6kr4abQsz" crossorigin="anonymous">
+  <link rel="stylesheet" href="css/app2.css">
+  
+</head>
+
+<body>
+
+<div id="page1" data-role="page">
+  <div role="main">
+	<div is="header" data-role="header">
+    	<img class="logo" src="image/logo.png" alt="">
+  	</div>
+	<div class="ui-content">
+		
+		<div class="user-block">
+			<img src="image/user.png" is="image">
+		</div>
+
+	  	<form>
+			<div class="input-wrap">
+			 <label for="text-1" class="ui-hidden-accessible">count input:</label>
+		     <input id="loginCount" class="count" type="text" data-clear-btn="true" name="text-1" value="" placeholder="ACCOUNT" required />
+			 <i class="fas fa-user"></i>
+			</div>
+
+			<div class="input-wrap">
+		     <label for="text-2" class="ui-hidden-accessible">password input:</label>
+		     <input id="loginPassword" type="password" data-clear-btn="true" name="text-2"  value="" placeholder="PASSWORD">
+		     <i class="fas fa-lock"></i>
+			</div>
+
+			 <label class="bg-gray">
+	         	<input type="checkbox" name="checkbox-0 ">Keep me logged in
+	    	 </label>
+		</form>
+
+	  	<a is="button" class="bg-orange mt25 f18 ui-btn text-white" href="javascript:void(0);" onclick="loginComform()" data-transition="slide">Login</a>
+	  	<a is="button" class="bg-dark-gray f18 text-white ui-btn" href="#page2" data-transition="slide">Sign Up</a>
+  	</div>
+  </div>
+</div>
+
+
+
+<div id="page2" data-role="page">
+  <div role="main">
+  	<div is="header" data-role="header">
+    	<img class="logo" src="image/logo.png" alt="">
+  	</div>
+  	<div class="big-label bg-dark-gray">
+  		<p class="text-white">Sign Up</p>
+  	</div>
+  	<div class="ui-content">
+		<div class="input-wrap mt25">
+			<label for="text-1" class="ui-hidden-accessible">count input:</label>
+			<input id="userCount" class="count" type="text" data-clear-btn="true" name="text-1" value="" placeholder="ACCOUNT">
+			<i class="fas fa-user"></i>
+		</div>
+		<div class="input-wrap">
+			<label for="text-1" class="ui-hidden-accessible">count input:</label>
+			<input id="userPassword" class="count" type="text" data-clear-btn="true" name="text-1" value="" placeholder="PASSWORD">
+			<i class="fas fa-lock"></i>
+		</div>
+		<div class="input-wrap">
+			<label for="text-1" class="ui-hidden-accessible">count input:</label>
+			<input id="userBirth" class="count" type="text" data-clear-btn="true" name="text-1" value="" placeholder="Date Of Birth YYYY-MM-DDD">
+			<i class="fas fa-birthday-cake"></i>
+		</div>
+		<div class="input-wrap">
+			<label for="text-1" class="ui-hidden-accessible">count input:</label>
+			<input id="userId" class="count" type="text" data-clear-btn="true" name="text-1" value="" placeholder="ID Card Number">
+			<i class="fas fa-id-card"></i>
+		</div>
+		<div class="input-wrap">
+			<label for="text-1" class="ui-hidden-accessible">count input:</label>
+			<input id="userPhone" class="count" type="text" data-clear-btn="true" name="text-1" value="" placeholder="MOBILE">
+			<i class="fas fa-mobile-alt"></i>
+		</div>
+		<div class="input-wrap">
+			<label for="text-1" class="ui-hidden-accessible">count input:</label>
+			<input id="userEmail" class="count" type="text" data-clear-btn="true" name="text-1" value="" placeholder="E-mail">
+			<i class="fas fa-envelope"></i>
+		</div>
+		
+		
+		<div is="grid" class="ui-grid-a" style="height:95px">
+	      <div is="block" class="ui-block-a" style="height:100%">
+	      	<a is="button" class="ui-btn ml0 bg-dark-gray text-white f18" href="#page1" data-transition="slide">Cancel</a>
+	      </div>
+	      <div is="block" class="ui-block-b" style="height:100%">
+	      	<a id="conform" is="button" class="ui-btn mr0 bg-orange f18 text-white" href="javascript:void(0);" onclick="signUpConform()">Submit</a>
+	      </div>
+	    </div>
+
+	</div>
+
+	
+  </div>
+
+</div>
+
+
+
+<div id="page3" data-role="page" style="background-color: #EF5B59!important;">
+  <div role="main" class="ui-content" style="background-color: #EF5B59!important	;">
+  	
+	<div class="sk-cube-grid">
+	  <div class="sk-cube sk-cube1"></div>
+	  <div class="sk-cube sk-cube2"></div>
+	  <div class="sk-cube sk-cube3"></div>
+	  <div class="sk-cube sk-cube4"></div>
+	  <div class="sk-cube sk-cube5"></div>
+	  <div class="sk-cube sk-cube6"></div>
+	  <div class="sk-cube sk-cube7"></div>
+	  <div class="sk-cube sk-cube8"></div>
+	  <div class="sk-cube sk-cube9"></div>
+	</div>
+	<span class="loading">loading...</span>
+  </div>
+</div>
+
+
+<div id="page4" data-role="page">
+  <div role="main">
+  	<div is="header" data-role="header">
+    	<img class="logo" src="image/logo.png" alt="">
+  	</div>
+  	<div class="ui-content">
+  		<div class="user-block">
+			<img src="image/user-check.png" is="image">
+		</div>
+		<h3>Registered Success !</h3>
+		<a is="button" class="bg-orange mt25 f18 ui-btn text-white" href="#page1" data-transition="slide">Confirm</a>
+  	</div>
+  </div>
+</div>
+
+
+<div id="page5" data-role="page">
+  <div role="main">
+  	<div is="header" data-role="header">
+    	<img class="logo" src="image/logo.png" alt="">
+  	</div>
+
+  	<div class="user-block">
+		<img src="image/user-check.png" is="image">
+	</div>
+	<div class="big-label bg-orange text-black">
+		<p class="text-white">
+			Member information
+		</p>
+	</div>
+		<div>
+			<div class="column text-black">
+				<i class="fas fa-user"></i>
+				<span class="small-icon">Account：</span>
+				<span id="info-user-count"></span>
+			</div>
+			<div class="column text-black">
+				<i class="fas fa-birthday-cake"></i>
+				<span>Date Of Birth：</span>
+				<span id="info-user-birth"></span>
+			</div>
+			<div class="column text-black">
+				<i class="fas fa-id-card"></i>
+				<span>ID Card Number：</span>
+				<span id="info-user-id"></span>
+			</div>
+			<div class="column text-black">
+				<i class="fas fa-mobile-alt"></i>
+				<span>Mobile：</span>
+				<span id="info-user-phone"></span>
+			</div>
+			<div class="column text-black">
+				<i class="fas fa-envelope"></i>
+				<span>E-mail：</span>
+				<span id="info-user-email"></span>
+			</div>
+			<div class="column text-black">
+				<i class="fas fa-credit-card"></i>
+				<span>Credit Card Description：</span>
+				<span id="info-user-credit"></span>
+			</div>
+		</div>
+		<div class="ui-content">
+			<a is="button" class="bg-orange mt25 mb70 f18 ui-btn text-white" href="#page1" data-transition="slide">Log Out</a>
+		</div>
+		<div class="buy-btn">
+			<a is="button" class="bg-green text-white mt25 f18 ui-btn" href="#page6" data-transition="slide" style="box-shadow: 0px -2px 10px rgba(0,0,0,.2);"><i class="fas fa-shopping-cart"></i> Proceed Online Shopping</a>
+		</div>
+  </div>
+</div>
+
+
+
+<div id="page6" data-role="page">
+  <div role="main">
+  	<div is="header" data-role="header">
+    	<img class="logo" src="image/logo.png" alt="">
+  	</div>
+  	<div class="big-label bg-dark-gray">
+  		<p class="text-white">Shop</p>
+  	</div>
+  	<ul class="product-list">
+  		<li>
+  			<a href="javascript:void(0);" onclick="getImg(this)" data-transition="slide">
+	  			<img src="image/product1.png" alt="">
+	  			<span class="product-price">$99.00</span>
+	  			<span class="buyit-icon"><i class="fas fa-shopping-cart text-black"></i></span>
+  			</a>
+  		</li>
+  		<li>
+  			<a href="javascript:void(0);" onclick="getImg(this)" data-transition="slide">
+	  			<img src="image/product2.png" alt="">
+	  			<span class="product-price">$99.00</span>
+	  			<span class="buyit-icon"><i class="fas fa-shopping-cart text-black"></i></span>
+  			</a>
+  		</li>
+  		<li>
+  			<a href="javascript:void(0);" onclick="getImg(this)" data-transition="slide">
+	  			<img src="image/product3.png" alt="">
+	  			<span class="product-price">$99.00</span>
+	  			<span class="buyit-icon"><i class="fas fa-shopping-cart text-black"></i></span>
+  			</a>
+  		</li>
+  		<li>
+  			<a href="javascript:void(0);" onclick="getImg(this)" data-transition="slide">
+	  			<img src="image/product4.png" alt="">
+	  			<span class="product-price">$99.00</span>
+	  			<span class="buyit-icon"><i class="fas fa-shopping-cart text-black"></i></span>
+  			</a>
+  		</li>
+  		<li>
+  			<a href="javascript:void(0);" onclick="getImg(this)" data-transition="slide">
+	  			<img src="image/product5.png" alt="">
+	  			<span class="product-price">$99.00</span>
+	  			<span class="buyit-icon"><i class="fas fa-shopping-cart text-black"></i></span>
+  			</a>
+  		</li>
+  		<li>
+  			<a href="javascript:void(0);" onclick="getImg(this)" data-transition="slide">
+	  			<img src="image/product6.png" alt="">
+	  			<span class="product-price">$99.00</span>
+	  			<span class="buyit-icon"><i class="fas fa-shopping-cart text-black"></i></span>
+  			</a>
+  		</li>
+  	</ul>
+  </div>
+</div>
+
+
+<div id="page7" data-role="page">
+  <div role="main">
+  	<div is="header" data-role="header">
+    	<img class="logo" src="image/logo.png" alt="">
+  	</div>
+  	<div class="ui-content">
+  		<div class="user-block">
+			<img id="conformProductImg" src="image/product2.png" is="image">
+			<h2 class="product-price">$99.00</h2>
+		</div>
+		<div is="grid" class="ui-grid-a" style="height:95px">
+	      <div is="block" class="ui-block-a" style="height:100%">
+	      	<a is="button" class="ui-btn ml0 bg-dark-gray text-white f18" href="#" data-rel="back" data-transition="slide">Cancel</a>
+	      </div>
+	      <div is="block" class="ui-block-b" style="height:100%">
+	      	<a id="conform" is="button" class="ui-btn mr0 bg-orange f18 text-white" href="#page8" data-transition="slide">Confirm</a>
+	      </div>
+	    </div>
+		
+  	</div>
+  </div>
+</div>
+
+
+
+
+
+<div id="page8" data-role="page">
+  <div role="main">
+  	<div is="header" data-role="header">
+    	<img class="logo" src="image/logo.png" alt="">
+  	</div>
+	<div class="big-label bg-dark-gray">
+  		<p class="text-white"><i class="fas fa-credit-card"></i> &nbsp;Credit Card Information</p>
+  	</div>
+
+
+  	<div class="ui-content">
+  		
+  		<p class="f18">Credit Card Number</p>
+		<div is="grid" class="ui-grid-c credit-num-input" style="height:60px">
+	      <div is="block" class="ui-block-a cdc" style="height:100%">
+	        <div is="fieldcontain" class="ui-field-contain">
+	          <label for="gk-1018YLCC"></label>
+	          <input class="tc cdi" is="text-input" type="password" name='t1' id="gk-1018YLCC" maxlength="4" onKeyup="next(this,'t2')">
+	        </div>
+	      </div>
+	      <div is="block" class="ui-block-b cdc" style="height:100%">
+	        <div is="fieldcontain" class="ui-field-contain">
+	          <label for="gk-1018We0J"></label>
+	          <input class="tc cdi"  is="text-input" type="password" name='t2' id="gk-1018We0J" maxlength="4" onKeyup="next(this,'t3')">
+	        </div>
+	      </div>
+	      <div is="block" class="ui-block-c cdc " style="height:100%">
+	        <div is="fieldcontain" class="ui-field-contain">
+	          <label for="gk-1018Jyak"></label>
+	          <input class="tc cdi" is="text-input" type="password" name='t3' id="gk-1018Jyak" maxlength="4" onKeyup="next(this,'t4')">
+	        </div>
+	      </div>
+	      <div is="block" class="ui-block-d cdc" style="height:100%">
+	        <div is="fieldcontain" class="ui-field-contain">
+	          <label for="gk-1018I7Xw"></label>
+	          <input class="tc cdi" is="text-input" type="password" name='t4' id="gk-1018I7Xw" maxlength="4">
+	        </div>
+	      </div>
+	    </div>
+
+
+
+
+
+
+
+		<div class="card-kind mb50">
+			<ul>
+				<li style="line-height: 28px;">
+					<img src="image/VISA.png" alt="">
+				</li>
+				<li>
+					<img src="image/Mastercard.png" alt="">
+				</li>
+				<li>
+					<img src="image/JCB.png" alt="">
+				</li>
+			</ul>
+		</div>
+
+		<p class="f18">Expiration Date ：</p>
+		<div class="effect-date">
+			<form>
+				<div class="ui-field-contain">
+				    <select name="select-native-1" id="select-native-1">
+				        <option value="">Year</option>
+				        <option value="2018">2018</option>
+				        <option value="2019">2019</option>
+				        <option value="2020">2020</option>
+						<option value="2021">2021</option>
+				    </select>
+				</div>
+			</form>
+			<form>
+				<div class="ui-field-contain">
+				    <select name="select-native-2" id="select-native-2">
+				        <option value="">Month</option>
+				        <option value="1">1</option>
+				        <option value="2">2</option>
+				        <option value="3">3</option>
+						<option value="4">4</option>
+						<option value="5">5</option>
+						<option value="6">6</option>
+						<option value="7">7</option>
+						<option value="8">8</option>
+						<option value="9">9</option>
+						<option value="10">10</option>
+						<option value="11">11</option>
+						<option value="12">12</option>
+				    </select>
+				</div>
+			</form>
+			<div style="clear: both;"></div>
+		</div>
+
+
+		<p class="f18">Credit Card Description：</p>
+		<div class="mb50">
+			<label for="desc"></label>
+	          <input class="tc" is="text-input" type="text" name id="credit-desc" maxlength="20">
+		</div>
+		
+		<div is="grid" class="ui-grid-a" style="height:95px">
+	      <div is="block" class="ui-block-a" style="height:100%">
+	      	<a is="button" class="ui-btn ml0 bg-dark-gray text-white f18" href="#" data-rel="back" data-transition="slide">Cancel</a>
+	      </div>
+	      <div is="block" class="ui-block-b" style="height:100%">
+	      	<a id="conform" is="button" class="ui-btn mr0 bg-orange f18 text-white" href="javascript:void(0);" onclick="allconform()">Confirm</a>
+	      </div>
+	    </div>
+
+  	</div>
+  </div>
+</div>
+
+
+
+<div id="page9" data-role="page">
+  <div role="main">
+  	<div is="header" data-role="header">
+    	<img class="logo" src="image/logo.png" alt="">
+  	</div>
+  	<div class="ui-content">
+  		<div class="user-block">
+			<img src="image/user-check.png" is="image">
+		</div>
+		<h3 class="tc">Success！</h3>
+		<a is="button" class="bg-orange mt25 f18 ui-btn text-white" href="#page5" data-transition="slide">Back</a>
+  	</div>
+  </div>
+</div>
+
+
+
+
+
+
+
+<script src="jquery-1.12.4.min.js"></script>
+<script src="jquery.mobile-1.4.5.js"></script>
+<script>
+	window.onload = function() {
+		
+	}
+
+	var currentUrl = "https://timmy951159.github.io/taipay-demo.github.io/";
+	
+	function loginComform(){
+		
+		var count = document.getElementById("loginCount").value;
+		var password = document.getElementById('loginPassword').value;
+
+		if(count === "" || password === "") {
+			alert("請輸入帳號密碼");
+		}
+		else {
+			console.log(currentUrl);
+			javascript:location.href = currentUrl + '#page5';
+		}
+
+	}
+
+	function signUpConform() {
+
+		var usercount = document.getElementById("userCount").value;
+		var userpassword = document.getElementById("userPassword").value;
+		var userbirth= document.getElementById("userBirth").value;
+		var userid = document.getElementById("userId").value;
+		var userphone = document.getElementById("userPhone").value;
+		var useremail = document.getElementById("userEmail").value;
+
+		if(usercount === "" || userpassword === "" ||  userbirth === "" ||  userid === "" ||  userphone === "" || useremail=== "") {
+			alert("請輸入完整資料");
+		}
+		else {
+			console.log(currentUrl);
+
+			var usercount = usercount.replace(function(){
+				var txtToStar = usercount.substring(1,5);
+				return txtToStar;
+			}(),'****');
+
+			var userid = userid.replace(function(){
+				var txtToStar = userid.substring(0,7);
+				return txtToStar;
+			}(),'*******');
+
+			var userbirth = userbirth.replace(function(){
+				var txtToStar = userbirth.substring(0,4);
+				return txtToStar;
+			}(),'****');
+
+			var userphone = userphone.replace(function(){
+				var txtToStar = userphone.substring(1,5);
+				return txtToStar;
+			}(),'****');
+
+			var useremail = useremail.replace(function(){
+				var txtToStar = useremail.substring(0,5);
+				return txtToStar;
+			}(),'*****');
+
+
+
+
+
+			document.getElementById("info-user-count").innerHTML = usercount;
+			document.getElementById("info-user-birth").innerHTML = userbirth;
+			document.getElementById("info-user-id").innerHTML = userid;
+			document.getElementById("info-user-phone").innerHTML = userphone;
+			document.getElementById("info-user-email").innerHTML = useremail;
+
+			javascript:location.href = currentUrl + '#page3';
+			setTimeout( 'javascript:location.href = currentUrl + "#page4"', 2000); 
+		}
+
+	}
+
+
+	function allconform() {
+
+		var creditNum1 = document.getElementById('gk-1018YLCC').value;
+		var creditNum2 = document.getElementById('gk-1018We0J').value;
+		var creditNum3 = document.getElementById('gk-1018Jyak').value;
+		var creditNum4 = document.getElementById('gk-1018I7Xw').value;
+		var creditNumAll = creditNum1 + '-' + creditNum2 + '-' + creditNum3 + '-' + creditNum4 ;
+		var creditDesc = document.getElementById('credit-desc').value;
+
+		creditNumAll = creditNumAll.replace(function(){
+			var creditNumAlltoStar = creditNumAll.substring(0,15);
+			return creditNumAlltoStar;
+		}(),'****-****-****-');
+
+		
+
+		document.getElementById("info-user-credit").innerHTML = creditDesc;
+
+		console.log(creditNumAll);
+
+		javascript:location.href = currentUrl + '#page3';
+		setTimeout( 'javascript:location.href = currentUrl + "#page9"', 2000); 
+	}
+
+	function getImg(e){
+		var imgUrl = e.children[0].src;
+		document.getElementById("conformProductImg").src=imgUrl;
+		javascript:location.href = currentUrl + '#page7';
+		
+	}
+
+	function next(obj,next) {  
+		 
+	    if (obj.value.length == obj.maxLength) {  
+
+	    	var aa = $(obj).parents('.cdc');
+	    	aa.next().children().children().children().focus();
+ 
+	}  
+}
+
+
+</script>
+</body>
+</html>
